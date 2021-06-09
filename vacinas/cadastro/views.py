@@ -1,6 +1,10 @@
 from django.shortcuts import render
+from django.http import HttpResponse 
 
-def index(request):
-    return render(request, 'index.html')
+from .models import cadastro
 
-# Create your views here.
+def listaVacinados(request):
+     
+    return render(request, 'cadastro/list.html', {'cadastro' : cadastro} )
+
+
